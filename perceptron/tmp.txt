@@ -1,0 +1,21 @@
+https://sleek-think.ovh/index.php/cours/10-l3-maths-pour-l-info/95-tp-algorithme-du-perceptron
+
+heavyside
+0 si x<0
+1 sinon
+
+relu
+0 si x<0
+x sinon
+
+leaky_relu
+ax si x<0
+x sinon
+
+sigmoid
+1 / (1+e^-x)
+
+tanh
+(e^x - e^-x) / (e^x + e^-x)
+
+Gradient: dérivée nécessaire donc heaviside non utilisable car distribution +infini
