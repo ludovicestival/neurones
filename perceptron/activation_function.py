@@ -8,7 +8,7 @@ class ActivationFunction:
 
     def apply(self, z):
         if self.name == "heaviside":
-            return z >= 0
+            return np.where(z >= 0, 1, 0)
         elif self.name == "sigmoid":
             return 1 / (1 + np.exp(-z))
         elif self.name == "tanh":
@@ -25,13 +25,14 @@ class ActivationFunction:
             # La dérivée de Heaviside est la distribution de Dirac
             return 0
         elif self.name == "sigmoid":
-            return np.exp(z) / ((np.exp(-z)+1)**2)
+            s = 1 / (1 + np.exp(-z))
+            return s * (1 - s)
         elif self.name == "tanh":
             return 1 - (np.exp(z)-np.exp(-z))**2 / (np.exp(z)+np.exp(-z))**2
         elif self.name == "relu":
-            return np.where(z < 0, 0, 1)
+            return np.where(z < 0, 0, z)
         elif self.name == "leaky_relu":
-            return np.where(z < 0, z, 1)
+            return np.where(z < 0, z*self.alpha, z)
         else:
             raise ValueError(f"Dérivée de '{self.name}' non définie.") 
 
