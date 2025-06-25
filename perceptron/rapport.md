@@ -6,15 +6,24 @@
 
 ### Exercice 1
 
-Mettre les images
+![alt text](figures/heaviside.png "Heaviside")
+
+![alt text](figures/leaky_relu.png "Leaky relu")
+
+![alt text](figures/relu.png "Relu")
+
+![alt text](figures/sigmoid.png "Sigmoid")
+
+![alt text](figures/tanh.png "Tanh")
 
 ### Exercice 2
 
 1. Pourquoi `heaviside` pose un problème pour l'apprentissage par gradient ?
-
 L'apprentissage par gradient nécessite l'utilisation des dérivées or `heaviside` n'est pas dérivable. On est donc obligé de passer par la distribution de Dirac.
 
 2. Dans quels cas utiliser `sigmoid` ou `tahn` ?
+Sigmoid : obtenir une sortie binaire
+Tanh : classer les résultats entre -1 et 1
 
 3. Pourquoi `relu` est-elle si populaire dans les réseaux profonds ?
 
@@ -24,9 +33,8 @@ L'apprentissage par gradient nécessite l'utilisation des dérivées or `heavisi
 
 ### Exercice 3
 
-1. Que se passe t-il si `n` est trop grand ?
-
-2. Et s'il est trop petit ?
+1 & 2. Que se passe t-il si `n` est trop grand ? Et s'il est trop petit ?
+Si `n` est trop grand, cela va corriger les poids trop rapidement. S'il est trop petit, cela ne va pas suffisament corriger les poids.
 
 3. Existe t-il une valeur idéale de `n` ?
 
@@ -34,6 +42,31 @@ L'apprentissage par gradient nécessite l'utilisation des dérivées or `heavisi
 
 5. Quelle stratégie pouvez vous imaginer ?
 
+---
 
 # TP 2 - Perceptron multi-couches
+
+## Partie 1 - Limites du Perceptron et introduction aux réseaux multicouches
+
+### Exercice 1.1
+
+1. Que signifie concrètement le théorème d'approximation universelle ?
+On peut approximer n'importe quelle fonction avec un perceptron multi-couches. En théorie, une seule couche suffit pour faire cela.
+
+2. Ce théorème garantit-il qu'on peut toujours trouver les bons poids ?
+Non, il garantit qu'il existe une approximation mais il ne nous garantit pas qu'on arrivera à les trouver.
+
+3. Quelle est la différence entre "pouvoir approximer" et "pouvoir apprendre" ?
+Approximer : s'approcher du résultat attendu sans jamais l'atteindre exactement
+Apprendre : trouver le résultat attendu
+
+4. Pourquoi utilise-t-on souvent beaucoup plus de couches cachées en pratique ?
+On utilise beaucoup plus de couches cachées en pratique pour obtenir une meilleure approximation du résultat.
+
+5. En principe, vous avez déjà vu au lycée un autre type d'approximateur de fonctions, donner leurs noms.
+Je ne me souviens d'aucun approximateur de fonctions.
+
+### Exercice 1.2
+
+## Partie 2 - Propagation avant
 
