@@ -41,22 +41,14 @@ class PerceptronSimple:
         return np.mean(predictions == y)
     
 if __name__ == '__main__':
-    activation_functions = [
-        ActivationFunction('heaviside'),
-        ActivationFunction('sigmoid'),
-        ActivationFunction('tanh'),
-        ActivationFunction('relu'),
-        ActivationFunction('leaky_relu')
-    ]
 
     # Données pour la fonction AND
     X_and = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     y_and = np.array([-1, -1, -1, 1])  # -1 pour False, 1 pour True
 
-    for func in activation_functions:
-        perceptron = PerceptronSimple(activation_func=func)
-        perceptron.fit(X_and, y_and)
-        print(perceptron.predict(X_and))
+    perceptron = PerceptronSimple(activation_func=ActivationFunction('tanh'))
+    perceptron.fit(X_and, y_and)
+    print(perceptron.predict(X_and))
 
     print('')
 
@@ -64,7 +56,6 @@ if __name__ == '__main__':
     X_or = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
     y_or = np.array([-1, 1, 1, 1])
 
-    for func in activation_functions:
-        perceptron = PerceptronSimple(activation_func=func)
-        perceptron.fit(X_or, y_or)
-        print(perceptron.predict(X_or))
+    perceptron = PerceptronSimple(activation_func=ActivationFunction('tanh'))
+    perceptron.fit(X_or, y_or)
+    print(perceptron.predict(X_or))
