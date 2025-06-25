@@ -1,4 +1,6 @@
-## Rapport - Ludovic Estival
+# Rapport - Ludovic Estival
+
+# TP 1 - Perceptron
 
 ## Partie 1 - Perceptron simple
 
@@ -31,3 +33,7 @@ L'apprentissage par gradient nécessite l'utilisation des dérivées or `heavisi
 4. Peut-on faire varier `n` au cours du temps ?
 
 5. Quelle stratégie pouvez vous imaginer ?
+
+
+# TP 2 - Perceptron multi-couches
+
