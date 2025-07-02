@@ -22,23 +22,34 @@
 L'apprentissage par gradient nécessite l'utilisation des dérivées or `heaviside` n'est pas dérivable. On est donc obligé de passer par la distribution de Dirac.
 
 2. Dans quels cas utiliser `sigmoid` ou `tahn` ?
-Sigmoid : obtenir une sortie binaire
-Tanh : classer les résultats entre -1 et 1
+On peut utiliser Sigmoid dans le cas où on souhaite obtenir une sortie binaire.
+On peut utiliser Tanh si on souhaite classer les résultats entre -1 et 1.
 
 3. Pourquoi `relu` est-elle si populaire dans les réseaux profonds ?
 
+Elle est moins coûteuse à calculer car on ne retrouve pas d'exponentielles comme avec `sigmoid` et `tahn`.
+De plus, elle annule toutes les valeurs négatives.
+
 4. Quel est l'avantage de `leaky relu` ?
+
+Elle laisse passer les valeurs négatives, contrairement à `relu`.
 
 ## Partie 2 - Apprentissage du perceptron
 
 ### Exercice 3
 
 1 & 2. Que se passe t-il si `n` est trop grand ? Et s'il est trop petit ?
-Si `n` est trop grand, cela va corriger les poids trop rapidement. S'il est trop petit, cela ne va pas suffisament corriger les poids.
+Si `n` est trop grand, cela va corriger les poids trop rapidement. 
+
+S'il est trop petit, cela ne va pas suffisament corriger les poids. Le modèle va donc apprendre lentement et il faudra plus d'itérations.
 
 3. Existe t-il une valeur idéale de `n` ?
 
+Je pense qu'il ne doit pas exister de valeur universelle idéale pour tous les cas. La valeur de `n` doit être choisie selon chaque cas, j'imagine.
+
 4. Peut-on faire varier `n` au cours du temps ?
+
+Je ne vois pas ce qui nous empêcherait de le faire.
 
 5. Quelle stratégie pouvez vous imaginer ?
 

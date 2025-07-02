@@ -30,9 +30,9 @@ class ActivationFunction:
         elif self.name == "tanh":
             return 1 - (np.exp(z)-np.exp(-z))**2 / (np.exp(z)+np.exp(-z))**2
         elif self.name == "relu":
-            return np.where(z < 0, 0, z)
+            return np.where(z < 0, 0, 1)
         elif self.name == "leaky_relu":
-            return np.where(z < 0, z*self.alpha, z)
+            return np.where(z < 0, z, 1)
         else:
             raise ValueError(f"Dérivée de '{self.name}' non définie.") 
 
