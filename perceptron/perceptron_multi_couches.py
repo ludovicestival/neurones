@@ -49,6 +49,11 @@ class PerceptronMultiCouches:
         # Pour l'erreur quadratique : gradient = (y_pred - y_true)
         # TODO: Propager le gradient vers l'arrière
 
+        # Dérivée de la fonction de perte
+        loss = 2 * (y_true - y_pred)
+
+
+
     def train_epoch(self, X, y):
         """
         Une époque d'entraînement
