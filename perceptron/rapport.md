@@ -19,9 +19,11 @@
 ### Exercice 2
 
 1. Pourquoi `heaviside` pose un problème pour l'apprentissage par gradient ?
+
 L'apprentissage par gradient nécessite l'utilisation des dérivées or `heaviside` n'est pas dérivable. On est donc obligé de passer par la distribution de Dirac.
 
 2. Dans quels cas utiliser `sigmoid` ou `tahn` ?
+
 On peut utiliser Sigmoid dans le cas où on souhaite obtenir une sortie binaire.
 On peut utiliser Tanh si on souhaite classer les résultats entre -1 et 1.
 
@@ -39,8 +41,8 @@ Elle laisse passer les valeurs négatives, contrairement à `relu`.
 ### Exercice 3
 
 1 & 2. Que se passe t-il si `n` est trop grand ? Et s'il est trop petit ?
-Si `n` est trop grand, cela va corriger les poids trop rapidement. 
 
+Si `n` est trop grand, cela va corriger les poids trop rapidement. 
 S'il est trop petit, cela ne va pas suffisament corriger les poids. Le modèle va donc apprendre lentement et il faudra plus d'itérations.
 
 3. Existe t-il une valeur idéale de `n` ?
@@ -62,19 +64,24 @@ Je ne vois pas ce qui nous empêcherait de le faire.
 ### Exercice 1.1
 
 1. Que signifie concrètement le théorème d'approximation universelle ?
+
 On peut approximer n'importe quelle fonction avec un perceptron multi-couches. En théorie, une seule couche suffit pour faire cela.
 
 2. Ce théorème garantit-il qu'on peut toujours trouver les bons poids ?
+
 Non, il garantit qu'il existe une approximation mais il ne nous garantit pas qu'on arrivera à les trouver.
 
 3. Quelle est la différence entre "pouvoir approximer" et "pouvoir apprendre" ?
+
 Approximer : s'approcher du résultat attendu sans jamais l'atteindre exactement
 Apprendre : trouver le résultat attendu
 
 4. Pourquoi utilise-t-on souvent beaucoup plus de couches cachées en pratique ?
+
 On utilise beaucoup plus de couches cachées en pratique pour obtenir une meilleure approximation du résultat.
 
 5. En principe, vous avez déjà vu au lycée un autre type d'approximateur de fonctions, donner leurs noms.
+
 Je ne me souviens d'aucun approximateur de fonctions.
 
 ### Exercice 1.2
