@@ -20,7 +20,7 @@
 
 1. Pourquoi `heaviside` pose un problème pour l'apprentissage par gradient ?
 
-L'apprentissage par gradient nécessite l'utilisation des dérivées or `heaviside` n'est pas dérivable. On est donc obligé de passer par la distribution de Dirac.
+L'apprentissage par gradient nécessite l'utilisation des dérivées or la dérivée de `heaviside` est 0, il ne se passera donc rien. On est obligé de passer par la distribution de Dirac qui en est une approximation.
 
 2. Dans quels cas utiliser `sigmoid` ou `tahn` ?
 
